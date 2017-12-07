@@ -1,0 +1,54 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{left=2.54cm,right=2.54cm,top=2.18cm,bottom=3.18cm}
+\graphicspath{{./img/}}
+
+\newcommand{\red}{\textcolor[rgb]{1.00,0.00,0.00}}
+
+\begin{document}
+
+\title{\textbf{HRPT数字卫星云图信号接收}}
+\author{无44 \ 姜宏伟 \ 2014011041\\
+        无46 \ 杨志坚 \ 2014011183\\
+        无46 \ 严靖凯 \ 2014011192\\
+        无46 \ 黄秀峰 \ 2014011193\\
+        无48 \ 黄佳新 \ 2014011248}
+\date{}
+\maketitle
+
+\section{背景与思路}
+
+卫星云图接收是电子系统设计中的一个经典项目。在传统的卫星云图信号接收中，人们通常选择接收美国国家海洋和大气局（NOAA）于20世纪中期发射的气象卫星NOAA-15,16,17
+
+美国国家海洋和大气局（NOAA）与20世纪中期发射的气象卫星NOAA-15,16,17等由于没有采用加密编码，且距地面较近，较便于接收。该卫星的发送APT信号，其下行频率为137.7MHz。该频率的信号可以通过软件无线电（SDR）直接接收与解码，并利用WXtoImg等软件直接显示。这是目前大多数卫星云图信号接收所采用的信号。
+
+同时，该卫星也发送1.7025GHz的HRPT信号，我们计划对这一信号进行接收。但由于该频率较高，难以直接用SDR直接接收。我们考虑借助东主楼顶闲置的卫星接收天线进行接收。我们已前往东主楼顶对天线进行了初步考察与清理。
+
+
+\section{系统框架}
+
+\section{HRPT信号接收与处理}
+
+\section{放大电路设计}
+
+\section{使用信号发生器模拟发送}
+
+\section{测试结果}
+
+\section{分析与讨论}
+
+
+\end{document} 
