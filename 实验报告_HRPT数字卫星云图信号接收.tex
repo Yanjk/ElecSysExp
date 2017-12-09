@@ -46,6 +46,69 @@
 
 \section{使用信号发生器模拟发送}
 
+本次实验使用SFU信号源作为信号发生器，使用WinIQSIM和IQWizard处理数据生成.wv文件用于信号源生成信号，具体流程如下。
+
+\subsection{用Matlab处理数据生成mat文件}
+
+首先用Matlab处理我们要发送的数据，生成需要发送的I、Q两路信号数组（数值在-1至1之间），将数据保存为single类型（注意，如果不保存single类型，IQWizard在读取时会出错）。最后通过$$save('data.mat','-v6',I,Q)$$将数据存储为mat文件
+
+\subsection{用WinIQSIM和IQWizard生成wv文件}
+
+利用WinIQSIM和IQWizard可以将mat文件转化为信号源可读取的mv文件。
+
+首先利用端口通信连接WinIQSIM和IQWizard
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images//connect.png}
+\end{figure}
+
+将mat文件导入到IQWizard中
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images//loadmat.png}
+\end{figure}
+
+将数据从IQWizard传输到WinIQSIM
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images//transform.png}
+\end{figure}
+
+利用WinIQSIM将数据导出为SFU可读取的wv文件
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images//getwv.png}
+\end{figure}
+
+\subsection{使用SFU信号源发送信号}
+
+选择SIGNAL SOURCE为ARB
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images//setARB.jpg}
+\end{figure}
+
+导入wv文件
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images//loadwv.jpg}
+\end{figure}
+
+选择载波频率
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{images//setfreq.jpg}
+\end{figure}
+
+设置成功后，会循环发送wv文件中的信号
+
 \section{测试结果}
 
 \section{分析与讨论}
